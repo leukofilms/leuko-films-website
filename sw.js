@@ -1,7 +1,7 @@
 /* Service worker de Leuko Films: guarda la web para que abra sin conexión.
    Si cambias algún archivo, sube el número de VERSION para que los móviles se actualicen. */
-const VERSION="leuko-v1";
-const CORE=["./","index.html","style.css","script.js","manifest.json","icons/icon-192.png","icons/icon-512.png"];
+const VERSION="leuko-v2-home-test";
+const CORE=["./","index.html","style.css","script.js","assets/verba-dignitatis-poster.jpeg","manifest.json","icons/icon-192.png","icons/icon-512.png"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(VERSION).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==VERSION).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 /* Caché primero; lo que se descarga (incluida la fuente Jost) se guarda para la próxima vez */
