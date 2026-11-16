@@ -105,3 +105,20 @@ label{font-size:.8rem;letter-spacing:.02em}
 .tc{font-family:var(--sans);letter-spacing:.1em}
 .lang{letter-spacing:.06em}
 @media(max-width:860px){nav{font-size:1.25rem}.hero{padding-bottom:calc(7vh + 4rem)}} /* evita que el timecode toque el botón en móvil */
+
+/* HOME CINEMATOGRÁFICA — prueba aislada en rama de diseño.
+   Imagen real: subir assets/verba-dignitatis-poster.jpeg a esta rama.
+   El cartel incluye tipografía propia: no se superpone un gran titular sobre ella. */
+.bar{background:linear-gradient(180deg,rgba(10,10,11,.88),rgba(10,10,11,.1));backdrop-filter:none}
+.hero{min-height:100svh;isolation:isolate;padding:clamp(6rem,12vh,9rem) clamp(1.2rem,6vw,6rem) clamp(2.5rem,7vh,5rem);align-items:flex-end}
+.hero-bg{inset:0;background-color:#151515;background-image:linear-gradient(0deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.68) 19%,rgba(0,0,0,.08) 57%),url("assets/verba-dignitatis-poster.jpeg");background-size:cover;background-position:center center;background-repeat:no-repeat}
+.hero::before,.hero::after{display:none}
+.hero-in{max-width:750px}
+.hero .eyebrow{color:#e4d5c4;text-shadow:0 1px 10px #000}
+.hero h1{font-style:normal;font-size:clamp(2.6rem,6vw,5.3rem);line-height:1.04;max-width:14ch;margin-bottom:1.6rem;text-wrap:balance;text-shadow:0 2px 20px #0008}
+.hero-actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.hero-actions .btn{background:#f1ebe2;color:#111112;border-color:#f1ebe2}
+.hero-actions .btn:hover{background:transparent;color:#fff}
+.hero-link{font-size:.9rem;border-bottom:1px solid currentColor;padding:.65rem 0}
+.hero-link:hover{color:var(--cu)}
+@media(max-width:680px){.hero{min-height:100svh;padding-bottom:7vh}.hero-bg{background-position:43% center;background-image:linear-gradient(0deg,rgba(0,0,0,.97) 0%,rgba(0,0,0,.76) 28%,rgba(0,0,0,.12) 76%),url("assets/verba-dignitatis-poster.jpeg")}.hero h1{font-size:clamp(2.3rem,10vw,4rem)}.hero-actions{gap:1rem}}
