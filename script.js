@@ -49,38 +49,29 @@ p2t:"El peso de la luz",p2d:"Short documentary on light inside a craft workshop.
 p3t:"Entre líneas",p3d:"Photo editorial on architecture and shadow.",p3c:"Conceptual project: urban geometry and visual rhythm in black and white.",
 p4t:"Quiet Forms",p4d:"Experimental slow-motion music video.",p4c:"Conceptual project: body, fabric and silence in a single long take.",view:"View project"}};
 // Proyectos: d = disciplina (photo|film), g = clase de fotograma provisional
-const P=[{id:1,d:"photo",g:"g1"},{id:2,d:"film",g:"g2"},{id:3,d:"photo",g:"g3"},{id:4,d:"film",g:"g4"}];
+const P=[{id:1,d:"film",g:"g1"},{id:2,d:"film",g:"g2"},{id:3,d:"film",g:"g3"},{id:4,d:"photo",g:"g4"}];
+for(const [code,strings] of Object.entries({"es":{"nav_work":"Portfolio","nav_stories":"Proyectos","work_title":"Una mirada. Distintas formas de contar.","work_intro":"Fotografía y vídeo con la misma atención a la luz, el detalle y la intención.","f_photo":"Fotografía","f_film":"Vídeo","stories_title":"Proyectos en desarrollo","portfolio_note":"Primera selección editorial. Los trabajos nombrados son reales; faltan imágenes y fichas completas. Verba Dignitatis se utiliza de forma provisional en portada.","about_art":"Imagen de estudio pendiente","contact_p":"¿Tienes una idea en mente? Escríbenos directamente.","contact_invite":"Fotografía, vídeo o un proyecto creativo: cuéntanoslo.","contact_button":"Enviar un correo","beta":"Primera versión · Portfolio en desarrollo","p1t":"Verba Dignitatis","p1d":"Proyecto audiovisual · Fotograma provisional","p1c":"Material y ficha del proyecto pendientes.","p2t":"Art Efímer","p2d":"Proyecto audiovisual · Material por incorporar","p2c":"Ficha editorial pendiente.","p3t":"Anda dame un beso","p3d":"Proyecto audiovisual · Material por incorporar","p3c":"Ficha editorial pendiente.","p4t":"Selección fotográfica","p4d":"Galería fotográfica pendiente de selección","p4c":"Se incorporarán trabajos fotográficos reales."},"ca":{"nav_work":"Portfolio","nav_stories":"Projectes","work_title":"Una mirada. Diferents maneres d'explicar.","work_intro":"Fotografia i vídeo amb la mateixa atenció a la llum, el detall i la intenció.","f_photo":"Fotografia","f_film":"Vídeo","stories_title":"Projectes en desenvolupament","portfolio_note":"Primera selecció editorial. Els treballs esmentats són reals; falten imatges i fitxes completes. Verba Dignitatis s'utilitza provisionalment a la portada.","about_art":"Imatge de l'estudi pendent","contact_p":"Tens una idea al cap? Escriu-nos directament.","contact_invite":"Fotografia, vídeo o un projecte creatiu: explica'ns-el.","contact_button":"Enviar un correu","beta":"Primera versió · Portfolio en desenvolupament","p1t":"Verba Dignitatis","p1d":"Projecte audiovisual · Fotograma provisional","p1c":"Material i fitxa del projecte pendents.","p2t":"Art Efímer","p2d":"Projecte audiovisual · Material per incorporar","p2c":"Fitxa editorial pendent.","p3t":"Anda dame un beso","p3d":"Projecte audiovisual · Material per incorporar","p3c":"Fitxa editorial pendent.","p4t":"Selecció fotogràfica","p4d":"Galeria fotogràfica pendent de selecció","p4c":"S'incorporaran treballs fotogràfics reals."},"en":{"nav_work":"Portfolio","nav_stories":"Projects","work_title":"One vision. Different ways to tell a story.","work_intro":"Photography and film with equal attention to light, detail and intent.","f_photo":"Photography","f_film":"Film","stories_title":"Projects in progress","portfolio_note":"Initial editorial selection. Named projects are real; full imagery and project information are pending. Verba Dignitatis is used provisionally on the cover.","about_art":"Studio image pending","contact_p":"Have something in mind? Email us directly.","contact_invite":"Photography, film or a creative project: we'd love to hear about it.","contact_button":"Send an email","beta":"First version · Portfolio in progress","p1t":"Verba Dignitatis","p1d":"Film project · Temporary still","p1c":"Project imagery and description pending.","p2t":"Art Efímer","p2d":"Film project · Assets pending","p2c":"Project details pending.","p3t":"Anda dame un beso","p3d":"Film project · Assets pending","p3c":"Project details pending.","p4t":"Photography selection","p4d":"Photo gallery awaiting curation","p4c":"Real photographic projects will be added."}}))Object.assign(T[code],strings);
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 let lang="es",cur=null;
 try{lang=localStorage.getItem("lk")||(["ca","en"].includes(navigator.language.slice(0,2))?navigator.language.slice(0,2):"es")}catch(e){}
 const t=k=>T[lang][k]||T.es[k]||k;
 
 function build(){ // tarjetas y lista de proyectos
-  $("#cards").innerHTML=P.map(p=>`<button class="card" data-d="${p.d}" data-id="${p.id}"><div class="ph ${p.g}"></div><small data-i18n="disc_${p.d}"></small><h3 data-i18n="p${p.id}t"></h3></button>`).join("");
-  $("#stories-list").innerHTML=P.map(p=>`<button class="story" data-id="${p.id}"><b style="color:var(--cu);font-weight:400">0${p.id}</b><h3 data-i18n="p${p.id}t"></h3><span data-i18n="p${p.id}d"></span><em data-i18n="view"></em></button>`).join("");
-  $$("[data-id]").forEach(b=>b.onclick=()=>openP(+b.dataset.id));
+  $("#cards").innerHTML=P.map(p=>`<article class="card" data-d="${p.d}"><div class="ph ${p.id===1?"project-verba":p.g}"></div><small data-i18n="disc_${p.d}"></small><h3 data-i18n="p${p.id}t"></h3><p class="project-description" data-i18n="p${p.id}d"></p></article>`).join("");
+  $("#stories-list").innerHTML=P.map(p=>`<div class="story"><b style="color:var(--cu);font-weight:400">0${p.id}</b><h3 data-i18n="p${p.id}t"></h3><span data-i18n="p${p.id}d"></span></div>`).join("");
+
 }
 function apply(){
   document.documentElement.lang=lang;
   $$("[data-i18n]").forEach(e=>e.textContent=t(e.dataset.i18n));
   $$("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===lang));
   document.title="Leuko Films — "+t("hero_title");
-  if(cur)renderP();
-}
-function renderP(){
-  const p=P.find(x=>x.id===cur);
-  $("#m-body").innerHTML=`<div class="m-top"><div><p class="eyebrow">0${p.id} · ${t("disc_"+p.d)}</p><h2>${t("p"+p.id+"t")}</h2></div>
-  <div><p>${t("p"+p.id+"d")}</p><p>${t("p"+p.id+"c")}</p><p class="meta">${t("role")}: ${t("disc_"+p.d)}</p><p class="note">${t("demo_note")}</p></div></div>
-  <div class="gal"><div class="ph ${p.g}"></div><div class="ph ${p.g}" style="filter:hue-rotate(15deg) brightness(.8)"></div><div class="ph ${p.g}" style="filter:brightness(1.3) contrast(.9)"></div></div>`;
-}
-let lastFocus;
-function openP(id){cur=id;lastFocus=document.activeElement;renderP();const m=$("#modal");m.hidden=false;requestAnimationFrame(()=>m.classList.add("open"));document.body.style.overflow="hidden";$("#close").focus()}
-function closeP(){const m=$("#modal");m.classList.remove("open");cur=null;setTimeout(()=>m.hidden=true,350);document.body.style.overflow="";lastFocus&&lastFocus.focus()}
 
+}
 build();apply();
 $$("[data-lang]").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;try{localStorage.setItem("lk",lang)}catch(e){}apply()});
-$("#close").onclick=closeP;$("#modal").onclick=e=>{if(e.target.id==="modal"||e.target.classList.contains("m-in"))closeP()};
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){cur?closeP():menu(false)}});
+
+document.addEventListener("keydown",e=>{if(e.key==="Escape")menu(false)});
 // Filtro Photography / Film
 $$(".tabs button").forEach(b=>b.onclick=()=>{$$(".tabs button").forEach(x=>x.classList.toggle("on",x===b));
   $$(".card").forEach(c=>c.classList.toggle("hide",b.dataset.f!=="all"&&c.dataset.d!==b.dataset.f))});
@@ -88,9 +79,6 @@ $$(".tabs button").forEach(b=>b.onclick=()=>{$$(".tabs button").forEach(x=>x.cla
 const menu=o=>{$("#nav").classList.toggle("open",o);$("#burger").setAttribute("aria-expanded",o)};
 $("#burger").onclick=()=>menu(!$("#nav").classList.contains("open"));
 $$("#nav a").forEach(a=>a.onclick=()=>menu(false));
-// Formulario demo (no envía nada)
-$("#form").onsubmit=e=>{e.preventDefault();const f=e.target,ok=f.n.value.trim()&&/\S+@\S+\.\S+/.test(f.m.value);
-  $("#fmsg").textContent=ok?t("f_ok"):t("f_err");if(ok)f.reset()};
 // Aparición suave al hacer scroll
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
 $$(".rv").forEach(e=>io.observe(e));
