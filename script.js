@@ -1,7 +1,7 @@
 /* LEUKO FILMS beta — lógica. Para añadir idiomas o textos, edita el objeto T. Proyectos: array P. */
 const T={
 es:{nav_work:"Work",nav_stories:"Proyectos",nav_services:"Servicios",nav_about:"Estudio",nav_contact:"Contacto",
-hero_eye:"Estudio de fotografía y producción audiovisual",hero_title:"Imágenes con intención",hero_cta:"Ver portfolio",
+hero_eye:"Estudio de fotografía y producción audiovisual",hero_title:"Imágenes con intención",hero_cta:"Explorar proyectos",hero_contact:"Hablemos",
 demo_short:"Material provisional",work_title:"Dos miradas, una misma intención.",f_all:"Todo",f_photo:"Photography",f_film:"Film",
 stories_title:"Proyectos destacados",demo_note:"Contenido conceptual de demostración. Estos proyectos son ficticios y no son trabajos reales de Leuko Films.",
 serv_title:"Lo que hacemos",s1t:"Fotografía comercial",s1d:"Campañas e imagen de marca con criterio editorial.",
@@ -17,7 +17,7 @@ p2t:"El peso de la luz",p2d:"Corto documental sobre la luz en un taller artesano
 p3t:"Entre líneas",p3d:"Editorial fotográfico sobre arquitectura y sombra.",p3c:"Proyecto conceptual: geometría urbana y ritmo visual en blanco y negro.",
 p4t:"Quiet Forms",p4d:"Videoclip experimental de movimiento lento.",p4c:"Proyecto conceptual: cuerpo, tela y silencio en un único plano secuencia.",view:"Ver proyecto"},
 ca:{nav_work:"Work",nav_stories:"Projectes",nav_services:"Serveis",nav_about:"Estudi",nav_contact:"Contacte",
-hero_eye:"Estudi de fotografia i producció audiovisual",hero_title:"Imatges amb intenció",hero_cta:"Veure portfolio",
+hero_eye:"Estudi de fotografia i producció audiovisual",hero_title:"Imatges amb intenció",hero_cta:"Explorar projectes",hero_contact:"Parlem",
 demo_short:"Material provisional",work_title:"Dues mirades, una mateixa intenció.",f_all:"Tot",f_photo:"Photography",f_film:"Film",
 stories_title:"Projectes destacats",demo_note:"Contingut conceptual de demostració. Aquests projectes són ficticis i no són treballs reals de Leuko Films.",
 serv_title:"El que fem",s1t:"Fotografia comercial",s1d:"Campanyes i imatge de marca amb criteri editorial.",
@@ -33,7 +33,7 @@ p2t:"El pes de la llum",p2d:"Curt documental sobre la llum en un taller artesà.
 p3t:"Entre línies",p3d:"Editorial fotogràfic sobre arquitectura i ombra.",p3c:"Projecte conceptual: geometria urbana i ritme visual en blanc i negre.",
 p4t:"Quiet Forms",p4d:"Videoclip experimental de moviment lent.",p4c:"Projecte conceptual: cos, tela i silenci en un únic pla seqüència.",view:"Veure projecte"},
 en:{nav_work:"Work",nav_stories:"Stories",nav_services:"Services",nav_about:"Studio",nav_contact:"Contact",
-hero_eye:"Photography and audiovisual production studio",hero_title:"Images with intent",hero_cta:"View portfolio",
+hero_eye:"Photography and audiovisual production studio",hero_title:"Images with intent",hero_cta:"Explore projects",hero_contact:"Let’s talk",
 demo_short:"Placeholder footage",work_title:"Two ways of seeing, one intention.",f_all:"All",f_photo:"Photography",f_film:"Film",
 stories_title:"Project stories",demo_note:"Conceptual demo content. These projects are fictional and are not real Leuko Films work.",
 serv_title:"What we do",s1t:"Commercial photography",s1d:"Campaigns and brand imagery with an editorial eye.",
