@@ -59,10 +59,12 @@ let lang="es",cur=null;
 try{lang=localStorage.getItem("lk")||(["ca","en"].includes(navigator.language.slice(0,2))?navigator.language.slice(0,2):"es")}catch(e){}
 const t=k=>T[lang][k]||T.es[k]||k;
 
-function build(){ // tarjetas y lista de proyectos
-  $("#cards").innerHTML=P.map(p=>`<article class="card" data-d="${p.d}" ${p.id===3?'data-video-project="true"':""}>${p.id===5?`<a class="project-thumb" href="#cortometraje-mqp041d2eqo" aria-label="Ver cortometraje"><img src="https://i.ytimg.com/vi/MQP041d2eqo/hqdefault.jpg" alt="Miniatura del cortometraje en YouTube" loading="lazy" decoding="async"><span class="project-play" aria-hidden="true">▶</span></a>`:p.id===3?`<a class="project-thumb" href="#anda-dame-un-beso" aria-label="Ver videoclip Anda dame un beso"><img src="https://i.ytimg.com/vi/QVNfdGuNFyI/hqdefault.jpg" alt="Miniatura del videoclip Anda dame un beso de DeLaNena" loading="lazy" decoding="async"><span class="project-play" aria-hidden="true">▶</span></a>`:`<div class="ph ${p.id===1?"project-verba":p.g}"></div>`}<small data-i18n="disc_${p.d}"></small><h3 data-i18n="p${p.id}t"></h3><p class="project-description" data-i18n="p${p.id}d"></p>${p.id===5?`<a class="project-watch" href="#cortometraje-mqp041d2eqo" data-i18n="short_watch_inline"></a>`:p.id===3?`<a class="project-watch" href="#anda-dame-un-beso" data-i18n="video_watch_inline"></a>`:""}</article>`).join("");
-  $("#stories-list").innerHTML=P.map(p=>`<div class="story"><b style="color:var(--cu);font-weight:400">0${p.id}</b><h3 data-i18n="p${p.id}t"></h3><span data-i18n="p${p.id}d"></span>${p.id===5?`<a class="story-watch" href="#cortometraje-mqp041d2eqo" data-i18n="short_watch_inline"></a>`:p.id===3?`<a class="story-watch" href="#anda-dame-un-beso" data-i18n="video_watch_inline"></a>`:""}</div>`).join("");
-
+function build(){
+  $("#cards").innerHTML=P.map(p=>{
+    if(p.id===5)return `<article class="card" data-d="film"><div class="project-thumb project-thumb-static"><img src="https://i.ytimg.com/vi/MQP041d2eqo/hqdefault.jpg" alt="Miniatura del cortometraje en YouTube" loading="lazy" decoding="async"></div></article>`;
+    return `<article class="card" data-d="${p.d}"><div class="${p.id===3?"project-thumb": "ph "+(p.id===1?"project-verba":p.g)}">${p.id===3?`<a href="#anda-dame-un-beso" aria-label="Ver videoclip Anda dame un beso"><img src="https://i.ytimg.com/vi/QVNfdGuNFyI/hqdefault.jpg" alt="Miniatura del videoclip Anda dame un beso de DeLaNena" loading="lazy" decoding="async"><span class="project-play" aria-hidden="true">▶</span></a>`:""}</div><small data-i18n="disc_${p.d}"></small><h3 data-i18n="p${p.id}t"></h3><p class="project-description" data-i18n="p${p.id}d"></p>${p.id===3?`<a class="project-watch" href="#anda-dame-un-beso" data-i18n="video_watch_inline"></a>`:""}</article>`;
+  }).join("");
+  $("#stories-list").innerHTML=P.filter(p=>p.id!==5).map(p=>`<div class="story"><b style="color:var(--cu);font-weight:400">0${p.id}</b><h3 data-i18n="p${p.id}t"></h3><span data-i18n="p${p.id}d"></span>${p.id===3?`<a class="story-watch" href="#anda-dame-un-beso" data-i18n="video_watch_inline"></a>`:""}</div>`).join("");
 }
 function apply(){
   document.documentElement.lang=lang;
