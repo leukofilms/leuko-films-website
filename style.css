@@ -146,3 +146,10 @@ label{font-size:.8rem;letter-spacing:.02em}
 .project-watch:hover,.story-watch:hover{color:var(--cu)}
 .story:has(.story-watch){grid-template-columns:3rem 1.2fr 2fr auto}
 @media(max-width:860px){.story:has(.story-watch){grid-template-columns:2rem 1fr}.story-watch{grid-column:2}}
+
+/* Miniatura oficial de YouTube para Anda dame un beso */
+.project-thumb{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;background:#111}
+.project-thumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.project-thumb:hover img,.project-thumb:focus-visible img{transform:scale(1.035)}
+.project-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0005,transparent 55%);pointer-events:none}
+.project-play{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:4rem;height:4rem;border-radius:50%;background:#111c;color:#fff;border:1px solid #fff9;font-size:1.25rem;padding-left:.22rem;pointer-events:none}
