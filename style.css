@@ -122,3 +122,15 @@ label{font-size:.8rem;letter-spacing:.02em}
 .hero-link{font-size:.9rem;border-bottom:1px solid currentColor;padding:.65rem 0}
 .hero-link:hover{color:var(--cu)}
 @media(max-width:680px){.hero{min-height:100svh;padding-bottom:7vh}.hero-bg{background-position:43% center;background-image:linear-gradient(0deg,rgba(0,0,0,.97) 0%,rgba(0,0,0,.76) 28%,rgba(0,0,0,.12) 76%),url("assets/verba-dignitatis-poster.jpeg")}.hero h1{font-size:clamp(2.3rem,10vw,4rem)}.hero-actions{gap:1rem}}
+
+/* Primera versión pública de portfolio */
+.work-intro{color:var(--mu);max-width:57ch;margin:-1.5rem 0 2rem}
+.project-description{margin-top:.5rem;color:var(--mu);font-size:.92rem;max-width:46ch}
+.project-verba{background-image:url("assets/verba-dignitatis-poster.jpeg");background-size:cover;background-position:center}
+.about-art{min-height:460px;aspect-ratio:4/5;background:linear-gradient(145deg,#303031,#121213 65%);display:flex;flex-direction:column;justify-content:space-between;padding:2.5rem}
+.about-art span{font:400 clamp(2.2rem,5vw,5rem)/.96 var(--serif);letter-spacing:-.035em}.about-art small{font-size:.8rem;letter-spacing:.09em;color:var(--mu)}
+.contact-direct{display:flex;flex-direction:column;align-items:flex-start;gap:1.8rem;justify-content:center}
+.contact-mail{font-family:var(--serif);font-size:clamp(1.25rem,3vw,2.2rem);border-bottom:1px solid var(--cu);overflow-wrap:anywhere}
+.contact-mail:hover{color:var(--cu)}
+.story{grid-template-columns:3rem 1.2fr 2fr}
+@media(max-width:860px){.about-art{min-height:350px}.story{grid-template-columns:2rem 1fr}.story span{grid-column:2}}
