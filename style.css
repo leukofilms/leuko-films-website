@@ -137,3 +137,12 @@ label{font-size:.8rem;letter-spacing:.02em}
 
 /* DeLaNena embed */
 .music-video{background:#141415}.video-intro{max-width:66ch;color:var(--mu);margin-top:-1.2rem;margin-bottom:2rem}.video-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#070707;border:1px solid #ffffff1c}.video-frame iframe{display:block;width:100%;height:100%;border:0}.video-official{display:inline-block;margin-top:1.3rem;padding-bottom:.3rem;border-bottom:1px solid var(--cu);font-size:.88rem}.video-official:hover{color:var(--cu)}
+
+/* Ficha de Anda dame un beso integrada en portfolio */
+.project-detail{scroll-margin-top:6rem;border-top:1px solid #ffffff22;margin-top:clamp(3rem,7vw,6rem);padding-top:clamp(2rem,5vw,4rem)}
+.project-detail h3{font-size:clamp(2rem,4vw,3.5rem);margin-bottom:1rem}
+.project-detail .video-intro{margin:0 0 1.8rem}
+.project-watch,.story-watch{font-size:.85rem;display:inline-block;border-bottom:1px solid var(--cu);margin-top:.8rem;padding-bottom:.2rem}
+.project-watch:hover,.story-watch:hover{color:var(--cu)}
+.story:has(.story-watch){grid-template-columns:3rem 1.2fr 2fr auto}
+@media(max-width:860px){.story:has(.story-watch){grid-template-columns:2rem 1fr}.story-watch{grid-column:2}}
