@@ -153,3 +153,6 @@ label{font-size:.8rem;letter-spacing:.02em}
 .project-thumb:hover img,.project-thumb:focus-visible img{transform:scale(1.035)}
 .project-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0005,transparent 55%);pointer-events:none}
 .project-play{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:4rem;height:4rem;border-radius:50%;background:#111c;color:#fff;border:1px solid #fff9;font-size:1.25rem;padding-left:.22rem;pointer-events:none}
+
+/* Separación entre las dos fichas audiovisuales */
+.project-detail + .project-detail{margin-top:clamp(3rem,7vw,6rem)}
