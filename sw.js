@@ -1,5 +1,5 @@
 /* Leuko Films: network-first para evitar versiones públicas obsoletas. */
-const VERSION="leuko-v7-video-thumbnail";
+const VERSION="leuko-v8-short-film";
 const CORE=["./","index.html","style.css","script.js","assets/verba-dignitatis-poster.jpeg","manifest.json","icons/icon-192.png","icons/icon-512.png"];
 self.addEventListener("install",event=>{
   event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));
