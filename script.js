@@ -59,7 +59,7 @@ try{lang=localStorage.getItem("lk")||(["ca","en"].includes(navigator.language.sl
 const t=k=>T[lang][k]||T.es[k]||k;
 
 function build(){ // tarjetas y lista de proyectos
-  $("#cards").innerHTML=P.map(p=>`<article class="card" data-d="${p.d}" ${p.id===3?'data-video-project="true"':""}><div class="ph ${p.id===1?"project-verba":p.g}"></div><small data-i18n="disc_${p.d}"></small><h3 data-i18n="p${p.id}t"></h3><p class="project-description" data-i18n="p${p.id}d"></p>${p.id===3?`<a class="project-watch" href="#anda-dame-un-beso" data-i18n="video_watch_inline"></a>`:""}</article>`).join("");
+  $("#cards").innerHTML=P.map(p=>`<article class="card" data-d="${p.d}" ${p.id===3?'data-video-project="true"':""}>${p.id===3?`<a class="project-thumb" href="#anda-dame-un-beso" aria-label="Ver videoclip Anda dame un beso"><img src="https://i.ytimg.com/vi/QVNfdGuNFyI/hqdefault.jpg" alt="Miniatura del videoclip Anda dame un beso de DeLaNena" loading="lazy" decoding="async"><span class="project-play" aria-hidden="true">▶</span></a>`:`<div class="ph ${p.id===1?"project-verba":p.g}"></div>`}<small data-i18n="disc_${p.d}"></small><h3 data-i18n="p${p.id}t"></h3><p class="project-description" data-i18n="p${p.id}d"></p>${p.id===3?`<a class="project-watch" href="#anda-dame-un-beso" data-i18n="video_watch_inline"></a>`:""}</article>`).join("");
   $("#stories-list").innerHTML=P.map(p=>`<div class="story"><b style="color:var(--cu);font-weight:400">0${p.id}</b><h3 data-i18n="p${p.id}t"></h3><span data-i18n="p${p.id}d"></span>${p.id===3?`<a class="story-watch" href="#anda-dame-un-beso" data-i18n="video_watch_inline"></a>`:""}</div>`).join("");
 
 }
