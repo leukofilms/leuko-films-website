@@ -156,3 +156,19 @@ label{font-size:.8rem;letter-spacing:.02em}
 
 /* Separación entre las dos fichas audiovisuales */
 .project-detail + .project-detail{margin-top:clamp(3rem,7vw,6rem)}
+
+/* GALERÍA GASTRONOMÍA */
+.gastronomia{background:#151516}
+.gastronomia[hidden]{display:none!important}
+.gastronomia .head h2{max-width:22ch}
+.gastronomia-intro{font-size:1rem;color:var(--mu);margin-top:1.5rem;max-width:50ch}
+.gastro-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(.55rem,1.6vw,1.4rem);align-items:stretch}
+.gastro-photo{grid-column:span 6;position:relative;overflow:hidden;min-height:280px;background:#232325}
+.gastro-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.gastro-photo:hover img{transform:scale(1.035)}
+.gastro-photo--hero{grid-column:span 7;aspect-ratio:1.16}
+.gastro-photo:nth-child(2){grid-column:span 5}
+.gastro-photo:nth-child(3){grid-column:span 5}
+.gastro-photo--wide{grid-column:span 7;aspect-ratio:1.35}
+.gastro-photo--portrait{grid-column:span 6;aspect-ratio:4/5}
+@media(max-width:700px){.gastro-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.gastro-photo,.gastro-photo--hero,.gastro-photo--wide{grid-column:span 2;min-height:0;aspect-ratio:4/3}.gastro-photo--portrait{grid-column:span 1;min-height:0;aspect-ratio:2/3}.gastro-photo img{object-position:center}}

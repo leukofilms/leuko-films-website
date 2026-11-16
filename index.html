@@ -12,7 +12,7 @@
      Helvetica se usa del sistema (Helvetica Neue > Helvetica > Arial): no se carga nada externo para ella. -->
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 <header class="bar" id="top">
@@ -61,6 +61,23 @@
 </section>
 
 
+
+<section id="gastronomia" class="sec gastronomia" hidden>
+  <div class="head rv">
+    <p class="eyebrow" data-i18n="gastronomy_eyebrow"></p>
+    <h2 data-i18n="gastronomy_title"></h2>
+    <p class="gastronomia-intro" data-i18n="gastronomy_intro"></p>
+  </div>
+  <div class="gastro-grid">
+    <figure class="gastro-photo gastro-photo--hero"><img src="assets/gastronomia/01-brasa-detalle.webp" alt="Primer plano de carne asada bajo iluminación de colores" loading="lazy" decoding="async"></figure>
+    <figure class="gastro-photo"><img src="assets/gastronomia/02-vancook-neon.webp" alt="Escena gastronómica con neón en el local" loading="lazy" decoding="async"></figure>
+    <figure class="gastro-photo"><img src="assets/gastronomia/03-corte-carne.webp" alt="Detalle de carne asada cortada sobre tabla" loading="lazy" decoding="async"></figure>
+    <figure class="gastro-photo gastro-photo--wide"><img src="assets/gastronomia/04-parrilla.webp" alt="Carne asándose sobre una parrilla en cocina" loading="lazy" decoding="async"></figure>
+    <figure class="gastro-photo gastro-photo--portrait"><img src="assets/gastronomia/05-cocina-retrato.webp" alt="Retrato ambiental del cocinero en la cocina" loading="lazy" decoding="async"></figure>
+    <figure class="gastro-photo gastro-photo--portrait"><img src="assets/gastronomia/06-vancook-ambiente.webp" alt="Interior gastronómico con calabazas y neón" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
+
 <section id="stories" class="sec alt">
   <div class="head rv"><p class="eyebrow" data-i18n="nav_stories"></p><h2 data-i18n="stories_title"></h2></div>
   <div class="stories" id="stories-list"></div>
@@ -97,7 +114,7 @@
 
 <footer><span>© Leuko Films — <span data-i18n="beta"></span></span><a href="#top" data-i18n="up"></a></footer>
 
-<script src="script.js?v=10"></script>
+<script src="script.js?v=11"></script>
 <script>if("serviceWorker" in navigator&&location.protocol!=="file:")addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))</script>
 </body>
 </html>
