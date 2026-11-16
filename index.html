@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PWA: permite instalar la web como app en Android (requiere HTTPS al alojarla) -->
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#111112">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>[Futura+Helvetica] Leuko Films — Imágenes con intención</title>
+<meta name="description" content="Leuko Films: estudio creativo de fotografía y producción audiovisual.">
+<!-- TIPOGRAFÍA: Futura (si está instalada en el sistema, p. ej. Apple) con Jost como alternativa provisional (Google Fonts, solo pesos 400/500).
+     Helvetica se usa del sistema (Helvetica Neue > Helvetica > Arial): no se carga nada externo para ella. -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar" id="top">
+  <a href="#home" class="logo">LEUKO<span>FILMS</span></a>
+  <nav id="nav" aria-label="Principal">
+    <a href="#work" data-i18n="nav_work"></a>
+    <a href="#stories" data-i18n="nav_stories"></a>
+    <a href="#services" data-i18n="nav_services"></a>
+    <a href="#about" data-i18n="nav_about"></a>
+    <a href="#contact" data-i18n="nav_contact"></a>
+  </nav>
+  <div class="lang" role="group" aria-label="Idioma">
+    <button data-lang="es">ES</button><button data-lang="ca">CA</button><button data-lang="en">EN</button>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+</header>
+
+<main>
+<!-- HOME: el fondo animado es un sustituto de vídeo. Para vídeo real, añadir <video> dentro de .hero-bg -->
+<section class="hero" id="home">
+  <div class="hero-bg"><div class="l l1"></div><div class="l l2"></div><div class="l l3"></div><div class="grain"></div></div>
+  <div class="hero-in">
+    <p class="eyebrow" data-i18n="hero_eye"></p>
+    <h1 data-i18n="hero_title"></h1>
+    <a class="btn" href="#work" data-i18n="hero_cta"></a>
+  </div>
+  <p class="tc">LEUKO FILMS — 00:00:24:12 · <span data-i18n="demo_short"></span></p>
+</section>
+
+<section id="work" class="sec">
+  <div class="head rv"><p class="eyebrow" data-i18n="nav_work"></p><h2 data-i18n="work_title"></h2></div>
+  <div class="tabs rv">
+    <button class="on" data-f="all" data-i18n="f_all"></button>
+    <button data-f="photo" data-i18n="f_photo"></button>
+    <button data-f="film" data-i18n="f_film"></button>
+  </div>
+  <div class="cards" id="cards"></div>
+</section>
+
+<section id="stories" class="sec alt">
+  <div class="head rv"><p class="eyebrow" data-i18n="nav_stories"></p><h2 data-i18n="stories_title"></h2></div>
+  <div class="stories" id="stories-list"></div>
+  <p class="note" data-i18n="demo_note"></p>
+</section>
+
+<section id="services" class="sec">
+  <div class="head rv"><p class="eyebrow" data-i18n="nav_services"></p><h2 data-i18n="serv_title"></h2></div>
+  <ol class="serv">
+    <li class="rv"><b>01</b><h3 data-i18n="s1t"></h3><p data-i18n="s1d"></p></li>
+    <li class="rv"><b>02</b><h3 data-i18n="s2t"></h3><p data-i18n="s2d"></p></li>
+    <li class="rv"><b>03</b><h3 data-i18n="s3t"></h3><p data-i18n="s3d"></p></li>
+    <li class="rv"><b>04</b><h3 data-i18n="s4t"></h3><p data-i18n="s4d"></p></li>
+    <li class="rv"><b>05</b><h3 data-i18n="s5t"></h3><p data-i18n="s5d"></p></li>
+  </ol>
+</section>
+
+<section id="about" class="sec alt about">
+  <div class="ph g2 rv" style="aspect-ratio:4/5"></div>
+  <div class="rv">
+    <p class="eyebrow" data-i18n="nav_about"></p>
+    <h2 data-i18n="about_title"></h2>
+    <p data-i18n="about_p1"></p><p data-i18n="about_p2"></p>
+    <blockquote data-i18n="about_q"></blockquote>
+  </div>
+</section>
+
+<section id="contact" class="sec contact">
+  <div class="rv"><p class="eyebrow" data-i18n="nav_contact"></p><h2 data-i18n="contact_title"></h2><p data-i18n="contact_p"></p></div>
+  <!-- Formulario de demostración: no envía datos a ningún sitio -->
+  <form id="form" class="rv" novalidate>
+    <label><span data-i18n="f_name"></span><input name="n" required></label>
+    <label><span data-i18n="f_mail"></span><input name="m" type="email" required placeholder="nombre@ejemplo.com"></label>
+    <label><span data-i18n="f_type"></span>
+      <select><option data-i18n="s1t"></option><option data-i18n="s3t"></option><option data-i18n="s4t"></option><option data-i18n="s5t"></option></select></label>
+    <label><span data-i18n="f_msg"></span><textarea rows="4"></textarea></label>
+    <button class="btn" type="submit" data-i18n="f_send"></button>
+    <p id="fmsg" role="status"></p>
+  </form>
+</section>
+</main>
+
+<footer><span>© Leuko Films — <span data-i18n="beta"></span></span><a href="#top" data-i18n="up"></a></footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" hidden>
+  <div class="m-in"><button class="x" id="close" aria-label="Close">×</button><div id="m-body"></div></div>
+</div>
+<script src="script.js"></script>
+<script>if("serviceWorker" in navigator&&location.protocol!=="file:")addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* LEUKO FILMS beta — lógica. Para añadir idiomas o textos, edita el objeto T. Proyectos: array P. */
+const T={
+es:{nav_work:"Work",nav_stories:"Proyectos",nav_services:"Servicios",nav_about:"Estudio",nav_contact:"Contacto",
+hero_eye:"Estudio de fotografía y producción audiovisual",hero_title:"Imágenes con intención",hero_cta:"Ver portfolio",
+demo_short:"Material provisional",work_title:"Dos miradas, una misma intención.",f_all:"Todo",f_photo:"Photography",f_film:"Film",
+stories_title:"Proyectos destacados",demo_note:"Contenido conceptual de demostración. Estos proyectos son ficticios y no son trabajos reales de Leuko Films.",
+serv_title:"Lo que hacemos",s1t:"Fotografía comercial",s1d:"Campañas e imagen de marca con criterio editorial.",
+s2t:"Producto y espacios",s2d:"Objetos y arquitectura tratados con luz y precisión.",s3t:"Producción audiovisual",s3d:"De la idea a la entrega: guion, rodaje y postproducción.",
+s4t:"Videoclips y proyectos creativos",s4d:"Piezas con riesgo, ritmo y personalidad propia.",s5t:"Dirección artística y contenido",s5d:"Una voz visual coherente para marcas que quieren destacar.",
+about_title:"Leuko Films",about_p1:"Somos un estudio creativo que entiende la imagen como decisión: cada encuadre, cada luz y cada corte responde a una intención.",
+about_p2:"Combinamos oficio cinematográfico, sensibilidad editorial y ganas de experimentar para crear piezas que funcionen para marcas y para personas.",about_q:"Mirar con intención es elegir qué no se ve.",
+contact_title:"Hablemos de tu próximo proyecto.",contact_p:"Cuéntanos qué tienes en mente. (Formulario de demostración.)",f_name:"Nombre",f_mail:"Email",f_type:"Tipo de proyecto",f_msg:"Mensaje",f_send:"Enviar",
+f_ok:"Gracias. Esto es una demo: el mensaje no se ha enviado.",f_err:"Completa nombre y un email válido.",beta:"Beta con contenido ficticio",up:"Volver arriba ↑",
+disc_photo:"Fotografía",disc_film:"Film",ctx:"Contexto",role:"Disciplina",
+p1t:"Materia & Origen",p1d:"Serie fotográfica sobre texturas y materiales en bruto.",p1c:"Proyecto conceptual: una exploración de la luz rasante sobre piedra, madera y metal.",
+p2t:"El peso de la luz",p2d:"Corto documental sobre la luz en un taller artesano.",p2c:"Proyecto conceptual: pieza de 6 minutos rodada en luz natural.",
+p3t:"Entre líneas",p3d:"Editorial fotográfico sobre arquitectura y sombra.",p3c:"Proyecto conceptual: geometría urbana y ritmo visual en blanco y negro.",
+p4t:"Quiet Forms",p4d:"Videoclip experimental de movimiento lento.",p4c:"Proyecto conceptual: cuerpo, tela y silencio en un único plano secuencia.",view:"Ver proyecto"},
+ca:{nav_work:"Work",nav_stories:"Projectes",nav_services:"Serveis",nav_about:"Estudi",nav_contact:"Contacte",
+hero_eye:"Estudi de fotografia i producció audiovisual",hero_title:"Imatges amb intenció",hero_cta:"Veure portfolio",
+demo_short:"Material provisional",work_title:"Dues mirades, una mateixa intenció.",f_all:"Tot",f_photo:"Photography",f_film:"Film",
+stories_title:"Projectes destacats",demo_note:"Contingut conceptual de demostració. Aquests projectes són ficticis i no són treballs reals de Leuko Films.",
+serv_title:"El que fem",s1t:"Fotografia comercial",s1d:"Campanyes i imatge de marca amb criteri editorial.",
+s2t:"Producte i espais",s2d:"Objectes i arquitectura tractats amb llum i precisió.",s3t:"Producció audiovisual",s3d:"De la idea al lliurament: guió, rodatge i postproducció.",
+s4t:"Videoclips i projectes creatius",s4d:"Peces amb risc, ritme i personalitat pròpia.",s5t:"Direcció artística i contingut",s5d:"Una veu visual coherent per a marques que volen destacar.",
+about_title:"Leuko Films",about_p1:"Som un estudi creatiu que entén la imatge com una decisió: cada enquadrament, cada llum i cada tall respon a una intenció.",
+about_p2:"Combinem ofici cinematogràfic, sensibilitat editorial i ganes d'experimentar per crear peces que funcionin per a marques i per a persones.",about_q:"Mirar amb intenció és triar què no es veu.",
+contact_title:"Parlem del teu proper projecte.",contact_p:"Explica'ns què tens al cap. (Formulari de demostració.)",f_name:"Nom",f_mail:"Email",f_type:"Tipus de projecte",f_msg:"Missatge",f_send:"Enviar",
+f_ok:"Gràcies. Això és una demo: el missatge no s'ha enviat.",f_err:"Omple el nom i un email vàlid.",beta:"Beta amb contingut fictici",up:"Tornar amunt ↑",
+disc_photo:"Fotografia",disc_film:"Film",ctx:"Context",role:"Disciplina",
+p1t:"Matèria & Origen",p1d:"Sèrie fotogràfica sobre textures i materials en brut.",p1c:"Projecte conceptual: una exploració de la llum rasant sobre pedra, fusta i metall.",
+p2t:"El pes de la llum",p2d:"Curt documental sobre la llum en un taller artesà.",p2c:"Projecte conceptual: peça de 6 minuts rodada amb llum natural.",
+p3t:"Entre línies",p3d:"Editorial fotogràfic sobre arquitectura i ombra.",p3c:"Projecte conceptual: geometria urbana i ritme visual en blanc i negre.",
+p4t:"Quiet Forms",p4d:"Videoclip experimental de moviment lent.",p4c:"Projecte conceptual: cos, tela i silenci en un únic pla seqüència.",view:"Veure projecte"},
+en:{nav_work:"Work",nav_stories:"Stories",nav_services:"Services",nav_about:"Studio",nav_contact:"Contact",
+hero_eye:"Photography and audiovisual production studio",hero_title:"Images with intent",hero_cta:"View portfolio",
+demo_short:"Placeholder footage",work_title:"Two ways of seeing, one intention.",f_all:"All",f_photo:"Photography",f_film:"Film",
+stories_title:"Project stories",demo_note:"Conceptual demo content. These projects are fictional and are not real Leuko Films work.",
+serv_title:"What we do",s1t:"Commercial photography",s1d:"Campaigns and brand imagery with an editorial eye.",
+s2t:"Product and spaces",s2d:"Objects and architecture shaped by light and precision.",s3t:"Audiovisual production",s3d:"From idea to delivery: script, shoot and post.",
+s4t:"Music videos and creative projects",s4d:"Pieces with risk, rhythm and a personality of their own.",s5t:"Art direction and brand content",s5d:"A coherent visual voice for brands that want to stand out.",
+about_title:"Leuko Films",about_p1:"We are a creative studio that treats the image as a decision: every frame, every light and every cut answers to an intention.",
+about_p2:"We blend cinematic craft, editorial sensitivity and a taste for experiment to make work that serves brands and people alike.",about_q:"To look with intent is to choose what stays unseen.",
+contact_title:"Let's talk about your next project.",contact_p:"Tell us what you have in mind. (Demo form.)",f_name:"Name",f_mail:"Email",f_type:"Project type",f_msg:"Message",f_send:"Send",
+f_ok:"Thanks. This is a demo: your message was not sent.",f_err:"Please enter a name and a valid email.",beta:"Beta with fictional content",up:"Back to top ↑",
+disc_photo:"Photography",disc_film:"Film",ctx:"Context",role:"Discipline",
+p1t:"Materia & Origen",p1d:"Photo series on raw textures and materials.",p1c:"Conceptual project: raking light across stone, wood and metal.",
+p2t:"El peso de la luz",p2d:"Short documentary on light inside a craft workshop.",p2c:"Conceptual project: a 6-minute piece shot in natural light.",
+p3t:"Entre líneas",p3d:"Photo editorial on architecture and shadow.",p3c:"Conceptual project: urban geometry and visual rhythm in black and white.",
+p4t:"Quiet Forms",p4d:"Experimental slow-motion music video.",p4c:"Conceptual project: body, fabric and silence in a single long take.",view:"View project"}};
+// Proyectos: d = disciplina (photo|film), g = clase de fotograma provisional
+const P=[{id:1,d:"photo",g:"g1"},{id:2,d:"film",g:"g2"},{id:3,d:"photo",g:"g3"},{id:4,d:"film",g:"g4"}];
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+let lang="es",cur=null;
+try{lang=localStorage.getItem("lk")||(["ca","en"].includes(navigator.language.slice(0,2))?navigator.language.slice(0,2):"es")}catch(e){}
+const t=k=>T[lang][k]||T.es[k]||k;
+
+function build(){ // tarjetas y lista de proyectos
+  $("#cards").innerHTML=P.map(p=>`<button class="card" data-d="${p.d}" data-id="${p.id}"><div class="ph ${p.g}"></div><small data-i18n="disc_${p.d}"></small><h3 data-i18n="p${p.id}t"></h3></button>`).join("");
+  $("#stories-list").innerHTML=P.map(p=>`<button class="story" data-id="${p.id}"><b style="color:var(--cu);font-weight:400">0${p.id}</b><h3 data-i18n="p${p.id}t"></h3><span data-i18n="p${p.id}d"></span><em data-i18n="view"></em></button>`).join("");
+  $$("[data-id]").forEach(b=>b.onclick=()=>openP(+b.dataset.id));
+}
+function apply(){
+  document.documentElement.lang=lang;
+  $$("[data-i18n]").forEach(e=>e.textContent=t(e.dataset.i18n));
+  $$("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===lang));
+  document.title="Leuko Films — "+t("hero_title");
+  if(cur)renderP();
+}
+function renderP(){
+  const p=P.find(x=>x.id===cur);
+  $("#m-body").innerHTML=`<div class="m-top"><div><p class="eyebrow">0${p.id} · ${t("disc_"+p.d)}</p><h2>${t("p"+p.id+"t")}</h2></div>
+  <div><p>${t("p"+p.id+"d")}</p><p>${t("p"+p.id+"c")}</p><p class="meta">${t("role")}: ${t("disc_"+p.d)}</p><p class="note">${t("demo_note")}</p></div></div>
+  <div class="gal"><div class="ph ${p.g}"></div><div class="ph ${p.g}" style="filter:hue-rotate(15deg) brightness(.8)"></div><div class="ph ${p.g}" style="filter:brightness(1.3) contrast(.9)"></div></div>`;
+}
+let lastFocus;
+function openP(id){cur=id;lastFocus=document.activeElement;renderP();const m=$("#modal");m.hidden=false;requestAnimationFrame(()=>m.classList.add("open"));document.body.style.overflow="hidden";$("#close").focus()}
+function closeP(){const m=$("#modal");m.classList.remove("open");cur=null;setTimeout(()=>m.hidden=true,350);document.body.style.overflow="";lastFocus&&lastFocus.focus()}
+
+build();apply();
+$$("[data-lang]").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;try{localStorage.setItem("lk",lang)}catch(e){}apply()});
+$("#close").onclick=closeP;$("#modal").onclick=e=>{if(e.target.id==="modal"||e.target.classList.contains("m-in"))closeP()};
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){cur?closeP():menu(false)}});
+// Filtro Photography / Film
+$$(".tabs button").forEach(b=>b.onclick=()=>{$$(".tabs button").forEach(x=>x.classList.toggle("on",x===b));
+  $$(".card").forEach(c=>c.classList.toggle("hide",b.dataset.f!=="all"&&c.dataset.d!==b.dataset.f))});
+// Menú móvil
+const menu=o=>{$("#nav").classList.toggle("open",o);$("#burger").setAttribute("aria-expanded",o)};
+$("#burger").onclick=()=>menu(!$("#nav").classList.contains("open"));
+$$("#nav a").forEach(a=>a.onclick=()=>menu(false));
+// Formulario demo (no envía nada)
+$("#form").onsubmit=e=>{e.preventDefault();const f=e.target,ok=f.n.value.trim()&&/\S+@\S+\.\S+/.test(f.m.value);
+  $("#fmsg").textContent=ok?t("f_ok"):t("f_err");if(ok)f.reset()};
+// Aparición suave al hacer scroll
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
+$$(".rv").forEach(e=>io.observe(e));
